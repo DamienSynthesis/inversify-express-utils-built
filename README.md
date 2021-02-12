@@ -12,7 +12,7 @@
 [![NPM](https://nodei.co/npm/inversify-express-utils.png?downloads=true&downloadRank=true)](https://nodei.co/npm/inversify-express-utils/)
 [![NPM](https://nodei.co/npm-dl/inversify-express-utils.png?months=9&height=3)](https://nodei.co/npm/inversify-express-utils/)
 
-#HOSTED BUILT VERSION WHILE I WAIT FOR INVERSIFY TO ACCEPT MY PR
+# HOSTED BUILT VERSION WHILE I WAIT FOR INVERSIFY TO ACCEPT MY PR
 
 Some utilities for the development of express applications with Inversify.
 
