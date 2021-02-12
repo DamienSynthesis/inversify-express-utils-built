@@ -32,9 +32,12 @@ export function getControllerMetadata(constructor) {
 }
 export function getControllerMethodMetadata(constructor) {
     var methodMetadata = Reflect.getOwnMetadata(METADATA_KEY.controllerMethod, constructor);
-    var genericMetadata = Reflect.getOwnMetadata(METADATA_KEY.controllerMethod, Reflect.getPrototypeOf(constructor));
+    var genericMetadata = Reflect.getMetadata(METADATA_KEY.controllerMethod, Reflect.getPrototypeOf(constructor));
     if (genericMetadata !== undefined && methodMetadata !== undefined) {
         return methodMetadata.concat(genericMetadata);
+    }
+    else if (genericMetadata !== undefined) {
+        return genericMetadata;
     }
     else {
         return methodMetadata;
@@ -42,9 +45,12 @@ export function getControllerMethodMetadata(constructor) {
 }
 export function getControllerParameterMetadata(constructor) {
     var parameterMetadata = Reflect.getOwnMetadata(METADATA_KEY.controllerParameter, constructor);
-    var genericMetadata = Reflect.getOwnMetadata(METADATA_KEY.controllerParameter, Reflect.getPrototypeOf(constructor));
+    var genericMetadata = Reflect.getMetadata(METADATA_KEY.controllerParameter, Reflect.getPrototypeOf(constructor));
     if (genericMetadata !== undefined && parameterMetadata !== undefined) {
         return __assign({}, parameterMetadata, genericMetadata);
+    }
+    else if (genericMetadata !== undefined) {
+        return genericMetadata;
     }
     else {
         return parameterMetadata;
